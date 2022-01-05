@@ -33,10 +33,10 @@ When using it, please keep the following rules in mind:
 - Do not send automated requests. For that, set up your own instance of LanguageTool or get an account for Enterprise use.
 - Only send POST requests, not GET requests.
 - Access is currently limited to:
-20 requests per IP per minute (this is supposed to be a peak value - don’t constantly send this many requests or LanguageTool would have to block you)
-75KB text per IP per minute
-20KB text per request
-Only up to 30 misspelled words will have suggestions
+-- 20 requests per IP per minute (this is supposed to be a peak value - don’t constantly send this many requests or LanguageTool would have to block you)
+-- 75KB text per IP per minute
+-- 20KB text per request
+-- Only up to 30 misspelled words will have suggestions
 
 This is a free service, thus there are no guarantees about performance or availability. The limits may change anytime.
 
