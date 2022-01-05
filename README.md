@@ -33,10 +33,13 @@ When using it, please keep the following rules in mind:
 - Do not send automated requests. For that, set up your own instance of LanguageTool or get an account for Enterprise use.
 - Only send POST requests, not GET requests.
 - Access is currently limited to:
--- 20 requests per IP per minute (this is supposed to be a peak value - don’t constantly send this many requests or LanguageTool would have to block you)
--- 75KB text per IP per minute
--- 20KB text per request
--- Only up to 30 misspelled words will have suggestions
+> 20 requests per IP per minute (this is supposed to be a peak value - don’t constantly send this many requests or LanguageTool would have to block you)
+
+> 75KB text per IP per minute
+
+> 20KB text per request
+
+> Only up to 30 misspelled words will have suggestions
 
 This is a free service, thus there are no guarantees about performance or availability. The limits may change anytime.
 
@@ -187,11 +190,7 @@ It will be soon a possibility to use Docker to run LanguageTool.
 
 # References
 
-- [Gramformer - GitHub](https://github.com/PrithivirajDamodaran/Gramformer)
-- [HappyTransformer - GitHub](https://github.com/EricFillion/happy-transformer)
-
-- [Gramformer - HuggingFace Model](https://huggingface.co/prithivida/grammar_error_correcter_v1)
-- [Happy Transformer - Website](http://happytransformer.com/)
-
-- [Gramformer: Correct Grammar With a Transformer Model](https://www.vennify.ai/gramformer-correct-grammar-transformer-nlp/)
-- [Fine-Tune a Transformer Model for Grammar Correction](https://www.vennify.ai/fine-tune-grammar-correction/)
+- [LanguageTool](https://languagetool.org/)
+- [How to run your own LanguageTool server](https://dev.languagetool.org/http-server)
+- [HTTP API documentation](https://languagetool.org/http-api/swagger-ui/#!/default/post_check)
+- [How to use LanguageTool's public server via HTTP](https://dev.languagetool.org/public-http-api)
