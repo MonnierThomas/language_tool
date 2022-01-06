@@ -183,10 +183,28 @@ offset:  7
 value of replacement: many dogs
 #############
 ```
+
+-------
+
+To use `--batch` argparse, do the following:
+```
+python3 src/main.py --batch path_of_batch.csv
+```
+
+Accepted batch format: `.txt`, `.csv`
   
 # Docker
 
-It will be soon a possibility to use Docker to run LanguageTool. 
+It's now a possibility to use Docker to run LanguageTool.
+
+Follow these steps in order to build:
+- `docker build . -t language_tool --network=host  # it will build the docker image`
+  
+Then you can do whatever you want (from correcting sentences to batches, and returning the full JSON):
+Example:
+- `docker run language_tool:latest --sentence 'I have many dog.'`
+- `docker run language_tool:latest --sentence 'I have many dog' --full_json True`
+- `docker run language_tool:latest --batch to_correct.csv`
 
 # References
 
