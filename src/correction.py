@@ -11,7 +11,7 @@ class Correction():
         self.errors = []
     
     def get_correction(self):
-        output = subprocess.check_output(["curl", "-d", self.text, "-d", "language=auto", "https://api.languagetool.org/v2/check"])
+        output = subprocess.check_output(['curl', '-d', self.text, '-d', 'language=auto', "https://api.languagetool.org/v2/check"])
         parsed = js.loads(output)
         json = js.dumps(parsed, indent=4, sort_keys=True)
         self.output, self.parsed, self.json = output, parsed, json
