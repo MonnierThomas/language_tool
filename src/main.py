@@ -29,12 +29,12 @@ if __name__ == "__main__":
             print('The value of full_json is not equal to True')
 
     if args.sentence != None:
-        with open(f'result.json', 'w') as fp:
+        with open(f'output.json', 'w') as fp:
             for sentence in args.sentence:
                 correction_sentence(sentence, full_json, fp)
     
     if args.batch != None:
-        with open(f'result.json', 'w') as fp:
+        with open(f'output.json', 'w') as fp:
             for batch in args.batch:
                 with open(batch) as f:
                     sentences = f.read().splitlines()

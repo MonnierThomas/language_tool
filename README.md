@@ -193,6 +193,8 @@ python3 src/main.py --batch path_of_batch.csv
 ```
 
 Accepted batch format: `.txt`, `.csv`
+
+A file `output.json` will be created, containing a JSON in format (text, edits) which can then be converted into M2 format very easily.
   
 # Docker
 
