@@ -9,6 +9,7 @@ class Correction():
         self.parsed = None
         self.json = None
         self.errors = []
+        self.json = {}
     
     def get_correction(self):
         output = subprocess.check_output(['curl', '-d', self.text, '-d', 'language=auto', "https://api.languagetool.org/v2/check"])
@@ -37,6 +38,15 @@ class Correction():
             print('offset: ',error.offset)
             print('value of replacement: '+error.value)
             print('#############')
+    
+    def return_json(self):
+        json = {"text": self.text[5:], "edits": [[0, []]]}
+        for error in self.errors:
+            json["edits"][0][1].append([error.offset, error.offset+error.length, error.value])
+        self.json = json
+    
+    def save_json(self, fp):
+        js.dump(self.json, fp)
 
     class Error():
         def __init__(self, length, offset, value):
